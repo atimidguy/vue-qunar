@@ -19,7 +19,10 @@
     data() {
       return {
         swiperOption: {
-          pagination: ".swiper-pagination"
+          pagination: ".swiper-pagination",
+          paginationClickable: true,
+          loop: true,
+          autoplay: 2000
         },
         swiperList: [
           {
