@@ -49,9 +49,11 @@
       padding-left: 0.2rem;
       padding-right: 0.2rem;
       display: flex;
+      align-items: baseline;
 
       .search-icon {
         color: #ccc;
+        font-size: 0.32rem;
         margin-right: 0.1rem;
       }
 
