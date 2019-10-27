@@ -110,32 +110,34 @@ export default {
   padding-bottom 0.3rem
 .icons >>> .swiper-pagination
   bottom 0
-.icon
-  float left
-  width 25%
-  padding-bottom 22%
-  position relative
-  height 0
-  .icon-img-container
-    top 0
-    left 0
-    right 0
-    bottom 0.44rem
-    position absolute
-    box-sizing border-box
-  .icon-img
-    display block
-    margin 0 auto
-    padding 0.1rem
-    height 100%
-  .icon-desc
-    position absolute
-    bottom 0
-    left 0
-    right 0
-    height 0.44rem
-    line-height 0.44rem
-    text-align center
-    color $darkTextColor
-    ellipsis()
+.icons
+  margin-top 0.1rem
+  .icon
+    float left
+    width 25%
+    padding-bottom 22%
+    position relative
+    height 0
+    .icon-img-container
+      top 0
+      left 0
+      right 0
+      bottom 0.44rem
+      position absolute
+      box-sizing border-box
+    .icon-img
+      display block
+      margin 0 auto
+      padding 0.1rem
+      height 100%
+    .icon-desc
+      position absolute
+      bottom 0
+      left 0
+      right 0
+      height 0.44rem
+      line-height 0.44rem
+      text-align center
+      color $darkTextColor
+      ellipsis()
 </style>
