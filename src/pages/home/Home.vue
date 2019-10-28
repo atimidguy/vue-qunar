@@ -39,20 +39,17 @@ export default {
   },
   methods: {
     getHomeInfo() {
-      axios
-        .get("/api/index.json")
-        .then(res => {
-          res = res.data;
-          if (res.ret && res.data) {
-            const data = res.data;
-            this.city = data.city;
-            this.swiperList = data.swiperList;
-            this.iconList = data.iconList;
-            this.recommendList = data.recommendList;
-            this.weekendList = data.weekendList;
-          }
-        })
-        .catch(err => console.error(err));
+      axios.get("/mock/index.json").then(res => {
+        res = res.data;
+        if (res.ret && res.data) {
+          const data = res.data;
+          this.city = data.city;
+          this.swiperList = data.swiperList;
+          this.iconList = data.iconList;
+          this.recommendList = data.recommendList;
+          this.weekendList = data.weekendList;
+        }
+      });
     }
   },
   mounted() {
