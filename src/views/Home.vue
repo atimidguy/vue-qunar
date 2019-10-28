@@ -5,13 +5,13 @@
 </template>
 
 <script>
-  import Home from "@/pages/home/Home";
-  export default {
-    components: {
-      Home
-    }
-  };
+import Home from "@/pages/home/Home";
+export default {
+  components: {
+    Home
+  }
+};
 </script>
 
-<style>
+<style scoped>
 </style>

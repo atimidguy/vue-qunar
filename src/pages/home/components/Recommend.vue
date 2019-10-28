@@ -10,7 +10,7 @@
       >
         <img :src="item.imgUrl" alt="" class="item-img" />
         <div class="item-info">
-          <p class="item-title">{{ item.name }}</p>
+          <p class="item-title">{{ item.title }}</p>
           <p class="item-desc">{{ item.desc }}</p>
           <button class="item-button">查看详情</button>
         </div>

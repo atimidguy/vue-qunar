@@ -7,9 +7,11 @@
       <span class="iconfont search-icon">&#xe632;</span>
       <input type="text" placeholder="请输入城市/景点/游玩主题" />
     </div>
-    <div class="header-right">
-      {{ city }}<span class="iconfont down-arrow-icon">&#xe64a;</span>
-    </div>
+    <router-link to="/city">
+      <div class="header-right">
+        {{ city }}<span class="iconfont down-arrow-icon">&#xe64a;</span>
+      </div>
+    </router-link>
   </div>
 </template>
 
@@ -24,12 +26,11 @@ export default {
 };
 </script>
 
-<style lang="stylus" scope>
-// @import '~@/assets/styles/variable.styl';
+<style lang="stylus" scoped>
 @import '~styles/variables.styl'
 
 .header
-  line-height 0.86rem
+  line-height $headerHeight
   background-color $bgColor
   display flex
   color #ffffff
@@ -60,6 +61,7 @@ export default {
   .header-right
     width 1.24rem
     text-align center
+    color #fff
     .down-arrow-icon
       margin-left 0.05rem
       font-size 0.24rem
