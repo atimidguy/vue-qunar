@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="recommend-container">
     <div class="title">热销推荐</div>
     <ul>
       <li
@@ -68,6 +68,9 @@ export default {
 <style lang="stylus" scoped>
 @import '~styles/mixins.styl'
 
+.recommend-container
+  box-sizing border-box
+  height 10.3rem
 .title
   margin-top 0.1rem
   line-height 0.8rem

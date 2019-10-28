@@ -117,6 +117,8 @@ export default {
 .icons >>> .swiper-pagination
   bottom 0
 .icons
+  height 0
+  padding-bottom 46%
   .icon
     float left
     width 25%
