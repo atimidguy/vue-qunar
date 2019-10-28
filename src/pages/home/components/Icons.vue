@@ -17,68 +17,74 @@
 <script>
 export default {
   name: "HomeIcons",
+  props: {
+    iconList: {
+      type: Array,
+      required: true
+    }
+  },
   data() {
     return {
       swiperOption: {
         pagination: ".swiper-pagination",
         paginationClickable: true
-      },
-      iconList: [
-        {
-          id: "0001",
-          imgUrl:
-            "https://imgs.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-          desc: "景点门票"
-        },
-        {
-          id: "0002",
-          imgUrl:
-            "https://imgs.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png",
-          desc: "一日游"
-        },
-        {
-          id: "0003",
-          imgUrl:
-            "https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/338c5b924c5809e8c7b14f60a953c3e2.png",
-          desc: "欢乐谷万圣节"
-        },
-        {
-          id: "0004",
-          imgUrl:
-            "https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/338c5b924c5809e8c7b14f60a953c3e2.png",
-          desc: "泡温泉"
-        },
-        {
-          id: "0005",
-          imgUrl:
-            "https://imgs.qunarzz.com/piao/fusion/1803/e3/67df61427c8e1302.png",
-          desc: "川剧变脸"
-        },
-        {
-          id: "0006",
-          imgUrl:
-            "https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20197/bf88c62458044ca2ef9d733690eef3fc.png",
-          desc: "优惠券"
-        },
-        {
-          id: "0007",
-          imgUrl:
-            "https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/3ef092d0a89ffddb7f781cda30c8ae49.png",
-          desc: "错峰出游"
-        },
-        {
-          id: "0008",
-          imgUrl:
-            "https://imgs.qunarzz.com/piao/fusion/1803/54/35899492b1302802.png",
-          desc: "熊猫基地"
-        },
-        {
-          id: "0009",
-          imgUrl:
-            "https://imgs.qunarzz.com/piao/fusion/1803/95/8246f27355943202.png",
-          desc: "国色天乡"
-        }
-      ]
+      }
+      // iconList: [
+      //   {
+      //     id: "0001",
+      //     imgUrl:
+      //       "https://imgs.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
+      //     desc: "景点门票"
+      //   },
+      //   {
+      //     id: "0002",
+      //     imgUrl:
+      //       "https://imgs.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png",
+      //     desc: "一日游"
+      //   },
+      //   {
+      //     id: "0003",
+      //     imgUrl:
+      //       "https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/338c5b924c5809e8c7b14f60a953c3e2.png",
+      //     desc: "欢乐谷万圣节"
+      //   },
+      //   {
+      //     id: "0004",
+      //     imgUrl:
+      //       "https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/338c5b924c5809e8c7b14f60a953c3e2.png",
+      //     desc: "泡温泉"
+      //   },
+      //   {
+      //     id: "0005",
+      //     imgUrl:
+      //       "https://imgs.qunarzz.com/piao/fusion/1803/e3/67df61427c8e1302.png",
+      //     desc: "川剧变脸"
+      //   },
+      //   {
+      //     id: "0006",
+      //     imgUrl:
+      //       "https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20197/bf88c62458044ca2ef9d733690eef3fc.png",
+      //     desc: "优惠券"
+      //   },
+      //   {
+      //     id: "0007",
+      //     imgUrl:
+      //       "https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/3ef092d0a89ffddb7f781cda30c8ae49.png",
+      //     desc: "错峰出游"
+      //   },
+      //   {
+      //     id: "0008",
+      //     imgUrl:
+      //       "https://imgs.qunarzz.com/piao/fusion/1803/54/35899492b1302802.png",
+      //     desc: "熊猫基地"
+      //   },
+      //   {
+      //     id: "0009",
+      //     imgUrl:
+      //       "https://imgs.qunarzz.com/piao/fusion/1803/95/8246f27355943202.png",
+      //     desc: "国色天乡"
+      //   }
+      // ]
     };
   },
   computed: {
@@ -107,11 +113,10 @@ export default {
   width 0.12rem
   height 0.12rem
 .icons >>> .swiper-container
-  padding-bottom 0.3rem
+  padding-bottom 0.2rem
 .icons >>> .swiper-pagination
   bottom 0
 .icons
-  margin-top 0.1rem
   .icon
     float left
     width 25%
@@ -119,10 +124,10 @@ export default {
     position relative
     height 0
     .icon-img-container
-      top 0
+      top 0.2rem
       left 0
       right 0
-      bottom 0.44rem
+      bottom 0.6rem
       position absolute
       box-sizing border-box
     .icon-img

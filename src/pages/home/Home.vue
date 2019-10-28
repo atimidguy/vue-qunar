@@ -1,10 +1,10 @@
 <template>
   <div>
-    <home-header></home-header>
-    <home-swiper></home-swiper>
-    <home-icons></home-icons>
-    <home-recommend></home-recommend>
-    <home-weekend></home-weekend>
+    <home-header :city="city"></home-header>
+    <home-swiper :swiperList="swiperList"></home-swiper>
+    <home-icons :iconList="iconList"></home-icons>
+    <home-recommend :recommendList="recommendList"></home-recommend>
+    <home-weekend :weekendList="weekendList"></home-weekend>
     <Footer />
   </div>
 </template>
@@ -16,6 +16,7 @@ import HomeIcons from "./components/Icons";
 import HomeRecommend from "./components/Recommend";
 import HomeWeekend from "./components/Weekend";
 import Footer from "../../pages/common/Footer";
+import axios from "axios";
 
 export default {
   name: "Home",
@@ -26,6 +27,36 @@ export default {
     HomeRecommend,
     HomeWeekend,
     Footer
+  },
+  data() {
+    return {
+      city: "",
+      swiperList: [],
+      iconList: [],
+      recommendList: [],
+      weekendList: []
+    };
+  },
+  methods: {
+    getHomeInfo() {
+      axios
+        .get("/api/index.json")
+        .then(res => {
+          res = res.data;
+          if (res.ret && res.data) {
+            const data = res.data;
+            this.city = data.city;
+            this.swiperList = data.swiperList;
+            this.iconList = data.iconList;
+            this.recommendList = data.recommendList;
+            this.weekendList = data.weekendList;
+          }
+        })
+        .catch(err => console.error(err));
+    }
+  },
+  mounted() {
+    this.getHomeInfo();
   }
 };
 </script>
