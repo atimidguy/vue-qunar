@@ -81,8 +81,10 @@ export default {
 .item-img-wrapper
   height 0
   overflow hidden
-  padding-bottom 38%
+  padding 0.1rem
+  padding-bottom 37%
   .item-img
+    border-radius 0.08rem
     width 100%
 .item-info
   padding 0.1rem
@@ -92,6 +94,6 @@ export default {
     ellipsis()
   .item-desc
     line-height 0.4rem
-    color #ccc
+    color #999
     ellipsis()
 </style>

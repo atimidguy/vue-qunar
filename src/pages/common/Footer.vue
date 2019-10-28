@@ -12,7 +12,7 @@
     </ul>
     <div class="copyright">
       <span>Qunar 京ICP备05021087</span>
-      <a href="#">意见反馈</a>
+      <a href="#"> 意见反馈</a>
     </div>
   </div>
 </template>
