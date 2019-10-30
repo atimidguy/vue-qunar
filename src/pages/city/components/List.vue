@@ -12,30 +12,15 @@
       <div class="area">
         <div class="title border-topbottom">热门城市</div>
         <div class="button-list">
-          <div class="button-wrapper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">北京</div>
+          <div class="button-wrapper" v-for="city in hot" :key="city.name">
+            <div class="button">{{ city.name }}</div>
           </div>
         </div>
       </div>
-      <div class="area" v-for="letter of alphabet" :key="letter">
-        <div class="title border-topbottom">{{ letter }}</div>
-        <ul class="item-list" v-if="letter === 'A'">
-          <li class="item border-bottom">阿拉尔</li>
-          <li class="item border-bottom">阿拉尔</li>
-          <li class="item border-bottom">阿拉尔</li>
-          <li class="item border-bottom">阿拉尔</li>
-          <li class="item border-bottom">阿拉尔</li>
-          <li class="item border-bottom">阿拉尔</li>
-          <li class="item border-bottom">阿拉尔</li>
+      <div class="area" v-for="(city, key) of cities" :key="key" :ref="key">
+        <div class="title border-topbottom">{{ key }}</div>
+        <ul class="item-list" v-for="cityItem in city" :key="cityItem.id">
+          <li class="item border-bottom">{{ cityItem.name }}</li>
         </ul>
       </div>
     </div>
@@ -47,8 +32,21 @@
 import BScroll from "better-scroll";
 export default {
   name: "cityList",
+  props: {
+    hot: Array,
+    cities: Object,
+    letter: String
+  },
   mounted() {
     this.scroll = new BScroll(this.$refs.wrapper);
+  },
+  watch: {
+    letter() {
+      if (this.letter) {
+        const element = this.$refs[this.letter][0];
+        this.scroll.scrollToElement(element);
+      }
+    }
   },
   computed: {
     alphabet() {

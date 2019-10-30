@@ -15,6 +15,9 @@ Vue.config.productionTip = false;
 // FastClick.attach(document.body);
 Vue.use(VueAwesomeSwiper);
 
+// event bus
+Vue.prototype.$eventBus = new Vue();
+
 new Vue({
   router,
   store,
