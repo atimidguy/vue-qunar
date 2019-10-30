@@ -1,6 +1,11 @@
 <template>
-  <div class="search">
-    <input class="search-input" type="text" placeholder="输入城市名或拼音" />
+  <div>
+    <div class="search">
+      <input class="search-input" type="text" placeholder="输入城市名或拼音" />
+    </div>
+    <div class="search-result">
+      111
+    </div>
   </div>
 </template>
 
