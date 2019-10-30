@@ -16,7 +16,6 @@ Vue.config.productionTip = false;
 Vue.use(VueAwesomeSwiper);
 
 // event bus
-Vue.prototype.$eventBus = new Vue();
 
 new Vue({
   router,

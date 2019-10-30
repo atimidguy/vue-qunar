@@ -3,7 +3,7 @@
     <city-header />
     <city-search />
     <city-list :cities="cities" :hot="hotCities" :letter="clickedLetter" />
-    <city-alphabet :cities="cities" @alphabetClick="handleAlphabetClick" />
+    <city-alphabet :cities="cities" @alphabet="handleAlphabet" />
   </div>
 </template>
 
@@ -40,7 +40,7 @@ export default {
         this.cities = data.cities;
       }
     },
-    handleAlphabetClick(letter) {
+    handleAlphabet(letter) {
       this.clickedLetter = letter;
     }
   },

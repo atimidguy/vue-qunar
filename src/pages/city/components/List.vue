@@ -17,10 +17,10 @@
           </div>
         </div>
       </div>
-      <div class="area" v-for="(city, key) of cities" :key="key" :ref="key">
+      <div class="area" v-for="(item, key) of cities" :key="key" :ref="key">
         <div class="title border-topbottom">{{ key }}</div>
-        <ul class="item-list" v-for="cityItem in city" :key="cityItem.id">
-          <li class="item border-bottom">{{ cityItem.name }}</li>
+        <ul class="item-list" v-for="innerItem in item" :key="innerItem.id">
+          <li class="item border-bottom">{{ innerItem.name }}</li>
         </ul>
       </div>
     </div>
@@ -28,6 +28,7 @@
 </template>
 
 <script>
+// import eventBus from "../eventBus";
 // import BScroll from '@better-scroll/core'
 import BScroll from "better-scroll";
 export default {
@@ -40,6 +41,7 @@ export default {
   mounted() {
     this.scroll = new BScroll(this.$refs.wrapper);
   },
+  created() {},
   watch: {
     letter() {
       if (this.letter) {
@@ -49,13 +51,13 @@ export default {
     }
   },
   computed: {
-    alphabet() {
-      const alphabetArr = [];
-      for (let i = 0; i < 26; i++) {
-        alphabetArr.push(String.fromCharCode(65 + i));
-      }
-      return alphabetArr;
-    }
+    // alphabet() {
+    //   const alphabetArr = [];
+    //   for (let i = 0; i < 26; i++) {
+    //     alphabetArr.push(String.fromCharCode(65 + i));
+    //   }
+    //   return alphabetArr;
+    // }
   }
 };
 </script>

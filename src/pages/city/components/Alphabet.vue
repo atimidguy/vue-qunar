@@ -4,8 +4,9 @@
       class="item"
       v-for="(val, key) of cities"
       :key="key"
+      :ref="key"
       @touchstart="handleAlphabetTouchStart"
-      @touchmove="handleAlphabetTouchMove"
+      @touchmove.prevent="handleAlphabetTouchMove"
       @touchend="handleAlphabetTouchEnd"
       @click="handleAlphabetClick"
     >
@@ -15,6 +16,7 @@
 </template>
 
 <script>
+// import eventBus from "../eventBus";
 export default {
   name: "cityAlphabet",
   props: {
@@ -22,31 +24,34 @@ export default {
   },
   data() {
     return {
-      isTouched: false,
-      startY: 0
+      isTouched: false
     };
   },
   methods: {
     handleAlphabetClick(e) {
-      this.$emit("alphabetClick", e.target.innerText);
+      this.$emit("alphabet", e.target.innerText);
     },
     handleAlphabetTouchStart() {
       this.isTouched = true;
     },
     handleAlphabetTouchMove(e) {
       if (this.isTouched) {
+        const startY = this.$refs["A"][0].offsetTop;
         const touchY = e.touches[0].clientY;
-        console.log(touchY);
+        const index = Math.floor((touchY - startY) / 20);
+        console.log(index);
 
-        const index = Math.floor((touchY - 121) / 20);
-        if (index >= 0 && index < 26) {
-          this.$emit("alphabetClick", this.letters[index]);
+        if (index >= 0 && index < this.letters.length) {
+          this.$emit("alphabet", this.letters[index]);
         }
       }
     },
     handleAlphabetTouchEnd() {
       this.isTouched = false;
     }
+  },
+  updated() {
+    console.log(this.startY);
   },
   computed: {
     // alphabet() {
@@ -76,11 +81,13 @@ export default {
   justify-content center
   align-items center
   position absolute
+  top 1.58rem
   top 0
   right 0
   bottom 0
-  width 0.4rem
+  width 0.6rem
   .item
+    user-select none
     line-height 0.4rem
     color $bgColor
 </style>
