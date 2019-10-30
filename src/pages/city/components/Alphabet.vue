@@ -50,9 +50,6 @@ export default {
       this.isTouched = false;
     }
   },
-  updated() {
-    console.log(this.startY);
-  },
   computed: {
     // alphabet() {
     //   const alphabetArr = [];
