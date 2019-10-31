@@ -141,14 +141,11 @@ export default {
     // box-shadow 1px 1px 3px #cfcfcf
     // width 86%
     // box-sizing border-box
-<<<<<<< HEAD
-=======
     // top 1.54rem
     // left 7%
     // background-color #fdfdfd
     // text-align center
     // color #666
->>>>>>> 37999a1cc2f0f470f214003bdfc0209b828639c3
     // text-align center
     .result-item
       font-size 0.28rem
