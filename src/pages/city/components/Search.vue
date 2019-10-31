@@ -117,13 +117,6 @@ export default {
     padding 0.1rem
     text-align center
     color #666
-  .search-result
-    z-index 100
-    position absolute
-    top 1.58rem
-    left 0
-    bottom 0
-    right 0
   .search-result-wrapper
     overflow hidden
     position absolute
