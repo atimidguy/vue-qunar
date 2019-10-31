@@ -5,7 +5,7 @@
         <div class="title border-topbottom">当前城市</div>
         <div class="button-list">
           <div class="button-wrapper">
-            <div class="button" @click="toHomepage">
+            <div class="button" @touchstart="toHomepage">
               {{ this.$store.state.city }}
             </div>
           </div>
@@ -18,7 +18,7 @@
             class="button-wrapper"
             v-for="city in hot"
             :key="city.name"
-            @click="handleCityClick(city.name)"
+            @touchstart="handleCityClick(city.name)"
           >
             <div class="button">{{ city.name }}</div>
           </div>
