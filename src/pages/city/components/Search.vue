@@ -13,6 +13,7 @@
             class="result-item border-bottom"
             v-for="(item, index) in filteredCities"
             :key="index"
+            @click="handleCityClick(item.name)"
           >
             <!-- v-for="innerItem in item"
             :key="innerItem" -->
@@ -41,6 +42,13 @@ export default {
   },
   mounted() {
     this.scroll = new Bscroll(this.$refs.search);
+  },
+  methods: {
+    handleCityClick(city) {
+      // this.$store.dispatch("changeCity", city);
+      this.$store.commit("changeCity", city);
+      this.$router.push("/");
+    }
   },
   watch: {
     keyword() {
@@ -117,15 +125,6 @@ export default {
     padding 0.1rem
     text-align center
     color #666
-<<<<<<< HEAD
-  .search-result
-    z-index 100
-    position absolute
-    top 1.58rem
-    left 0
-    bottom 0
-    right 0
-=======
   .search-result-wrapper
     overflow hidden
     position absolute
@@ -133,25 +132,16 @@ export default {
     left 0
     right 0
     bottom 0
-    z-index 100
+    z-index 1
     background-color #fdfdfd
     color #666
->>>>>>> origin/city-search-logic
     // max-height 6.3rem
     // overflow auto
     // border-radius 0.06rem
     // box-shadow 1px 1px 3px #cfcfcf
     // width 86%
     // box-sizing border-box
-<<<<<<< HEAD
-    // top 1.54rem
-    // left 7%
-    // background-color #fdfdfd
     // text-align center
-    // color #666
-=======
-    // text-align center
->>>>>>> origin/city-search-logic
     .result-item
       font-size 0.28rem
       line-height 0.62rem

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <home-header :city="city"></home-header>
+    <home-header></home-header>
     <home-swiper :swiperList="swiperList"></home-swiper>
     <home-icons :iconList="iconList"></home-icons>
     <home-recommend :recommendList="recommendList"></home-recommend>
@@ -10,6 +10,7 @@
 </template>
 
 <script>
+// import Bscroll from "better-scroll";
 import HomeHeader from "./components/Header";
 import HomeSwiper from "./components/Swiper";
 import HomeIcons from "./components/Icons";
@@ -30,7 +31,6 @@ export default {
   },
   data() {
     return {
-      city: "",
       swiperList: [],
       iconList: [],
       recommendList: [],
@@ -43,7 +43,6 @@ export default {
         res = res.data;
         if (res.ret && res.data) {
           const data = res.data;
-          this.city = data.city;
           this.swiperList = data.swiperList;
           this.iconList = data.iconList;
           this.recommendList = data.recommendList;
@@ -54,6 +53,9 @@ export default {
   },
   mounted() {
     this.getHomeInfo();
+    // this.scroll = new Bscroll(this.$refs.homepage);
   }
 };
 </script>
+
+

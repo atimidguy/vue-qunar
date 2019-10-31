@@ -5,14 +5,21 @@
         <div class="title border-topbottom">当前城市</div>
         <div class="button-list">
           <div class="button-wrapper">
-            <div class="button">北京</div>
+            <div class="button" @click="toHomepage">
+              {{ this.$store.state.city }}
+            </div>
           </div>
         </div>
       </div>
       <div class="area">
         <div class="title border-topbottom">热门城市</div>
         <div class="button-list">
-          <div class="button-wrapper" v-for="city in hot" :key="city.name">
+          <div
+            class="button-wrapper"
+            v-for="city in hot"
+            :key="city.name"
+            @click="handleCityClick(city.name)"
+          >
             <div class="button">{{ city.name }}</div>
           </div>
         </div>
@@ -20,7 +27,12 @@
       <div class="area" v-for="(item, key) of cities" :key="key" :ref="key">
         <div class="title border-topbottom">{{ key }}</div>
         <ul class="item-list" v-for="innerItem in item" :key="innerItem.id">
-          <li class="item border-bottom">{{ innerItem.name }}</li>
+          <li
+            class="item border-bottom"
+            @click="handleCityClick(innerItem.name)"
+          >
+            {{ innerItem.name }}
+          </li>
         </ul>
       </div>
     </div>
@@ -41,7 +53,17 @@ export default {
   mounted() {
     this.scroll = new BScroll(this.$refs.wrapper);
   },
-  created() {},
+  methods: {
+    handleCityClick(city) {
+      // this.$store.dispatch("changeCity", city);
+      this.$store.commit("changeCity", city);
+      this.toHomepage();
+    },
+    toHomepage() {
+      this.$router.push("/");
+    }
+  },
+  // created() {},
   watch: {
     letter() {
       if (this.letter) {

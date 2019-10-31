@@ -3,7 +3,8 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 
-// import FastClick from 'fastclick';
+// remove 300ms delay
+import FastClick from 'fastclick';
 import VueAwesomeSwiper from 'vue-awesome-swiper';
 
 import 'swiper/dist/css/swiper.css';
@@ -12,7 +13,9 @@ import 'styles/border.css';
 import 'styles/iconfont.css';
 
 Vue.config.productionTip = false;
-// FastClick.attach(document.body);
+
+FastClick.attach(document.body);
+
 Vue.use(VueAwesomeSwiper);
 
 // event bus
