@@ -13,7 +13,7 @@
             class="result-item border-bottom"
             v-for="(item, index) in filteredCities"
             :key="index"
-            @click="handleCityClick(item.name)"
+            @touchstart="handleCityClick(item.name)"
           >
             <!-- v-for="innerItem in item"
             :key="innerItem" -->
