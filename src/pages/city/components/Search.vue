@@ -117,7 +117,6 @@ export default {
     padding 0.1rem
     text-align center
     color #666
-<<<<<<< HEAD
   .search-result
     z-index 100
     position absolute
@@ -125,7 +124,6 @@ export default {
     left 0
     bottom 0
     right 0
-=======
   .search-result-wrapper
     overflow hidden
     position absolute
@@ -136,22 +134,18 @@ export default {
     z-index 100
     background-color #fdfdfd
     color #666
->>>>>>> origin/city-search-logic
     // max-height 6.3rem
     // overflow auto
     // border-radius 0.06rem
     // box-shadow 1px 1px 3px #cfcfcf
     // width 86%
     // box-sizing border-box
-<<<<<<< HEAD
     // top 1.54rem
     // left 7%
     // background-color #fdfdfd
     // text-align center
     // color #666
-=======
     // text-align center
->>>>>>> origin/city-search-logic
     .result-item
       font-size 0.28rem
       line-height 0.62rem
