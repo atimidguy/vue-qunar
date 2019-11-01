@@ -6,7 +6,8 @@
         <div class="button-list">
           <div class="button-wrapper">
             <div class="button" @touchstart="toHomepage">
-              {{ this.$store.state.city }}
+              <!-- {{ this.$store.state.city }} -->
+              {{ currentCity }}
             </div>
           </div>
         </div>
@@ -43,6 +44,7 @@
 // import eventBus from "../eventBus";
 // import BScroll from '@better-scroll/core'
 import BScroll from "better-scroll";
+import { mapState, mapMutations } from "vuex";
 export default {
   name: "cityList",
   props: {
@@ -54,9 +56,11 @@ export default {
     this.scroll = new BScroll(this.$refs.wrapper);
   },
   methods: {
+    ...mapMutations(["changeCity"]),
     handleCityClick(city) {
       // this.$store.dispatch("changeCity", city);
-      this.$store.commit("changeCity", city);
+      // this.$store.commit("changeCity", city);
+      this.changeCity(city);
       this.toHomepage();
     },
     toHomepage() {
@@ -73,6 +77,9 @@ export default {
     }
   },
   computed: {
+    ...mapState({
+      currentCity: "city"
+    })
     // alphabet() {
     //   const alphabetArr = [];
     //   for (let i = 0; i < 26; i++) {
