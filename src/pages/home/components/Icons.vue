@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper :options="swiperOption" ref="mySwiper">
+    <swiper :options="swiperOption" ref="mySwiper" v-if="isKeep">
       <swiper-slide v-for="(page, index) of pages" :key="index">
         <div class="icon" v-for="icon of page" :key="icon.index">
           <div class="icon-img-container">
@@ -28,7 +28,8 @@ export default {
       swiperOption: {
         pagination: ".swiper-pagination",
         paginationClickable: true
-      }
+      },
+      isKeep: false
       // iconList: [
       //   {
       //     id: "0001",
@@ -86,6 +87,12 @@ export default {
       //   }
       // ]
     };
+  },
+  activated() {
+    this.isKeep = true;
+  },
+  deactivated() {
+    this.isKeep = false;
   },
   computed: {
     pages() {

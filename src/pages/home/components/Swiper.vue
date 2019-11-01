@@ -2,7 +2,7 @@
 <!-- The ref attr used to find the swiper instance -->
 <template>
   <div class="wrapper">
-    <swiper :options="swiperOption" ref="mySwiper" v-if="showSwiper">
+    <swiper :options="swiperOption" ref="mySwiper" v-if="showSwiper && isKeep">
       <!-- slides -->
       <swiper-slide
         :swiperList="swiperList"
@@ -31,12 +31,9 @@ export default {
         pagination: ".swiper-pagination",
         paginationClickable: true,
         loop: true,
-        autoplay: 2000,
-        // START: fix swiper not autoplaying after changing city
-        observer: true,
-        observeParents: true
-        // END
-      }
+        autoplay: 2000
+      },
+      isKeep: false
       // swiperList: [
       //   {
       //     id: "0001",
@@ -51,6 +48,12 @@ export default {
       //   }
       // ]
     };
+  },
+  activated() {
+    this.isKeep = true;
+  },
+  deactivated() {
+    this.isKeep = false;
   },
   computed: {
     showSwiper() {
