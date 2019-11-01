@@ -31,7 +31,11 @@ export default {
         pagination: ".swiper-pagination",
         paginationClickable: true,
         loop: true,
-        autoplay: 2000
+        autoplay: 2000,
+        // START: fix swiper not autoplaying after changing city
+        observer: true,
+        observeParents: true
+        // END
       }
       // swiperList: [
       //   {
