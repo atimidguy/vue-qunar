@@ -18,7 +18,7 @@ const routes = [
     component: City
   },
   {
-    path: '/detail',
+    path: '/detail/:id',
     name: 'detail',
     component: Detail
   }
