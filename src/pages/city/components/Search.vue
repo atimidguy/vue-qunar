@@ -13,7 +13,7 @@
             class="result-item border-bottom"
             v-for="(item, index) in filteredCities"
             :key="index"
-            @touchstart="handleCityClick(item.name)"
+            @click="handleCityClick(item.name)"
           >
             <!-- v-for="innerItem in item"
             :key="innerItem" -->
@@ -42,7 +42,7 @@ export default {
     };
   },
   mounted() {
-    this.scroll = new Bscroll(this.$refs.search);
+    this.scroll = new Bscroll(this.$refs.search, { click: true });
   },
   methods: {
     handleCityClick(city) {
