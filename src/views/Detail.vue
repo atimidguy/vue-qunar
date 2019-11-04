@@ -7,6 +7,7 @@
 <script>
 import Detail from "@/pages/detail/Detail";
 export default {
+  name: "DetailView",
   components: {
     Detail
   }

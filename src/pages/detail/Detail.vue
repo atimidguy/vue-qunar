@@ -1,6 +1,10 @@
 <template>
   <div>
-    <detail-banner></detail-banner>
+    <detail-banner
+      :sightName="sightName"
+      :bannerImg="bannerImg"
+      :bannerImgs="galleryImgs"
+    ></detail-banner>
     <detail-header></detail-header>
     <div class="content">
       <detail-list :categoryList="categoryList"></detail-list>
@@ -13,7 +17,7 @@ import DetailBanner from "./components/Banner";
 import DetailHeader from "./components/Header";
 import DetailList from "./components/List";
 export default {
-  name: "DefaultBanner",
+  name: "Detail",
   components: {
     DetailBanner,
     DetailHeader,
@@ -21,23 +25,35 @@ export default {
   },
   data() {
     return {
-      categoryList: [
-        {
-          title: "成人票",
-          children: [
-            { title: "成人三馆联票" },
-            { title: "成人三馆联票 - 某一连锁店销售" }
-          ]
-        },
-        { title: "学生票" },
-        {
-          title: "儿童票",
-          children: [{ title: "儿童三馆联票 - 某一连锁店销售" }]
-        },
-        { title: "特惠票" }
-      ]
+      sightName: "",
+      bannerImg: "",
+      categoryList: [],
+      galleryImgs: []
     };
+  },
+  methods: {
+    getDetail() {
+      this.$http
+        .get("/mock/detail.json", { params: { id: this.$route.params.id } })
+        .then(this.getDetailSucc);
+    },
+    getDetailSucc(res) {
+      res = res.data;
+      if (res.ret && res.data) {
+        const data = res.data;
+        this.sightName = data.sightName;
+        this.bannerImg = data.bannerImg;
+        this.categoryList = data.categoryList;
+        this.galleryImgs = data.galleryImgs;
+      }
+    }
+  },
+  mounted() {
+    this.getDetail();
   }
+  // activated() {
+  //   this.getDetail();
+  // }
 };
 </script>
 
