@@ -5,7 +5,7 @@
         <div class="title border-topbottom">当前城市</div>
         <div class="button-list">
           <div class="button-wrapper">
-            <div class="button" @touchstart="toHomepage">
+            <div class="button" @click="toHomepage">
               <!-- {{ this.$store.state.city }} -->
               {{ currentCity }}
             </div>
@@ -19,7 +19,7 @@
             class="button-wrapper"
             v-for="city in hot"
             :key="city.name"
-            @touchstart="handleCityClick(city.name)"
+            @click="handleCityClick(city.name)"
           >
             <div class="button">{{ city.name }}</div>
           </div>
@@ -53,7 +53,7 @@ export default {
     letter: String
   },
   mounted() {
-    this.scroll = new BScroll(this.$refs.wrapper);
+    this.scroll = new BScroll(this.$refs.wrapper, { click: true });
   },
   methods: {
     ...mapMutations(["changeCity"]),

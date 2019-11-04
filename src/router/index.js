@@ -8,6 +8,10 @@ Vue.use(VueRouter);
 
 const routes = [
   {
+    path: '*',
+    component: Home
+  },
+  {
     path: '/',
     name: 'home',
     component: Home
@@ -26,7 +30,11 @@ const routes = [
 
 const router = new VueRouter({
   mode: 'history',
-  routes
+  routes,
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  }
+  // scrollBehavior (to, from, savedPosition)
 });
 
 export default router;
