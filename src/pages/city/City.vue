@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import CityHeader from "./components/Header";
 import CitySearch from "./components/Search";
 import CityList from "./components/List";
@@ -30,7 +29,7 @@ export default {
   },
   methods: {
     getCityInfo() {
-      axios.get("/mock/city.json").then(this.getCityInfoSucc);
+      this.$http.get("/mock/city.json").then(this.getCityInfoSucc);
     },
     getCityInfoSucc(res) {
       res = res.data;

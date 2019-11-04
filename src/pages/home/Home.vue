@@ -17,7 +17,6 @@ import HomeIcons from "./components/Icons";
 import HomeRecommend from "./components/Recommend";
 import HomeWeekend from "./components/Weekend";
 import Footer from "../../pages/common/Footer";
-import axios from "axios";
 import { mapState } from "vuex";
 
 export default {
@@ -44,7 +43,7 @@ export default {
   },
   methods: {
     getHomeInfo() {
-      axios
+      this.$http
         .get("/mock/index.json?city=" + this.city)
         .then(this.getHomeInfoSucc);
     },
