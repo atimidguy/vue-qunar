@@ -8,7 +8,6 @@
     <Footer />
   </div>
 </template>
-
 <script>
 // import Bscroll from "better-scroll";
 import HomeHeader from "./components/Header";
@@ -44,7 +43,7 @@ export default {
   methods: {
     getHomeInfo() {
       this.$http
-        .get("/mock/index.json?city=" + this.city)
+        .get("/api/index.json?city=" + this.city)
         .then(this.getHomeInfoSucc);
     },
     getHomeInfoSucc(res) {
@@ -71,5 +70,3 @@ export default {
   }
 };
 </script>
-
-

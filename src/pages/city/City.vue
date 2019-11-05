@@ -6,7 +6,6 @@
     <city-alphabet :cities="cities" @alphabet="handleAlphabet" />
   </div>
 </template>
-
 <script>
 import CityHeader from "./components/Header";
 import CitySearch from "./components/Search";
@@ -29,7 +28,7 @@ export default {
   },
   methods: {
     getCityInfo() {
-      this.$http.get("/mock/city.json").then(this.getCityInfoSucc);
+      this.$http.get("/api/city.json").then(this.getCityInfoSucc);
     },
     getCityInfoSucc(res) {
       res = res.data;
@@ -48,6 +47,5 @@ export default {
   }
 };
 </script>
-
 <style>
 </style>
