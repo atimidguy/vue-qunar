@@ -6,22 +6,22 @@ module.exports = {
       alias: {
         styles: path.join(__dirname, "src/assets/styles")
       }
-    },
-    devServer: {
-      proxy: {
-        "/api": {
-          changeOrigin: true, // needed for virtual hosted sites
-          ws: true,
-          target: "http://localhost:8080",
-          pathRewrite: {
-            "^/api": "/mock"
-          }
-          // pathRewrite: function(path, req) {
-          //   return path.replace("/api", "/mock");
-          // }
-        }
-      }
     }
+    // devServer: {
+    //   proxy: {
+    //     "/api": {
+    //       changeOrigin: true, // needed for virtual hosted sites
+    //       ws: true,
+    //       target: "http://localhost:8080",
+    //       pathRewrite: {
+    //         "^/api": "/mock"
+    //       }
+    //       // pathRewrite: function(path, req) {
+    //       //   return path.replace("/api", "/mock");
+    //       // }
+    //     }
+    //   }
+    // }
   }
 };
 // const path = require('path');
