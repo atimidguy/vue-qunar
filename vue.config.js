@@ -1,23 +1,24 @@
 // vue.config.js
-const path = require('path');
-
+const path = require("path");
 module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        styles: path.join(__dirname, 'src/assets/styles')
+        styles: path.join(__dirname, "src/assets/styles")
       }
     },
     devServer: {
       proxy: {
-        '/api': {
+        "/api": {
           changeOrigin: true, // needed for virtual hosted sites
           ws: true,
-          target: 'http://localhost:8080',
+          target: "http://localhost:8080",
           pathRewrite: {
-            '^/api': '/mock'
+            "^/api": "/mock"
           }
-          // pathRewrite: function(path, req) { return path.replace('/api', '/mock') }
+          // pathRewrite: function(path, req) {
+          //   return path.replace("/api", "/mock");
+          // }
         }
       }
     }
