@@ -2,4 +2,4 @@
 /*    /index.html   200
 
 # redirects
-/api/*  /mock  200
+/api/city.json   /mock/city.json
