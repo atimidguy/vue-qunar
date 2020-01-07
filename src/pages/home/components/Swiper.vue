@@ -31,6 +31,7 @@ export default {
         pagination: ".swiper-pagination",
         paginationClickable: true,
         loop: true,
+        autoplayDisableOnInteraction: false, // always autoplay even if interacted
         autoplay: 2000
       },
       isKeep: false
